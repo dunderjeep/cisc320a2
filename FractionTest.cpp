@@ -10,5 +10,7 @@ int main(int argc, char * argv[]) {
 	cout << test1 << endl;
 	Fraction test2(4);
 	cout << test2 << endl;
+	Fraction test3(20, 30);
+	cout << test3 << endl;
 	return 1;
 }

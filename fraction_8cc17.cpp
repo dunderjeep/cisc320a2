@@ -6,6 +6,7 @@ using namespace std;
 
 Fraction::Fraction() : numerator(0), denominator(1) { }
 Fraction::Fraction(int n) : numerator(n), denominator(1) { }
+Fraction::Fraction(int n, int d) : numerator(n), denominator(d) { }
 
 int Fraction::getNumerator() const { return numerator; }
 int Fraction::getDenominator() const { return denominator; }
