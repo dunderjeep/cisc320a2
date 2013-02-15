@@ -12,5 +12,7 @@ int main(int argc, char * argv[]) {
 	cout << test2 << endl;
 	Fraction test3(20, 30);
 	cout << test3 << endl;
+//	Fraction test4(210, -60);
+//	cout << "Should be \"-7/2\": " << test4 << endl;
 	return 1;
 }

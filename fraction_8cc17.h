@@ -10,11 +10,11 @@ public:
 	Fraction();
 	Fraction(int);
 	Fraction(int, int);
-	int getNumerator() const;
-	int getDenominator() const;		
+	int numerator() const;
+	int denominator() const;		
 private:
-	int numerator;
-	int denominator;
+	int num;
+	int denom;
 	int gcd(int, int);
 	void normalize();
 };
