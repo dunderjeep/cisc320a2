@@ -5,6 +5,7 @@ using namespace std;
 #include "fraction_8cc17.h"
 
 Fraction::Fraction() : numerator(0), denominator(1) { }
+Fraction::Fraction(int n) : numerator(n), denominator(1) { }
 
 int Fraction::getNumerator() const { return numerator; }
 int Fraction::getDenominator() const { return denominator; }

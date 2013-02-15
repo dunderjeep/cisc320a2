@@ -8,5 +8,7 @@ int main(int argc, char * argv[]) {
 
 	Fraction test1;
 	cout << test1 << endl;
+	Fraction test2(4);
+	cout << test2 << endl;
 	return 1;
 }

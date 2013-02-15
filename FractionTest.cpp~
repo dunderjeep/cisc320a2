@@ -5,7 +5,7 @@ using namespace std;
 #include "fraction_8cc17.h"
 
 int main(int argc, char * argv[]) {
-	cout << "Hello World" << endl;
+
 	Fraction test1;
 	cout << test1 << endl;
 	return 1;
