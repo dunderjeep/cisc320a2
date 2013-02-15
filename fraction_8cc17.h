@@ -11,10 +11,12 @@ public:
 	Fraction(int);
 	Fraction(int, int);
 	int getNumerator() const;
-	int getDenominator() const;
+	int getDenominator() const;		
 private:
 	int numerator;
 	int denominator;
+	int gcd(int, int);
+	void normalize();
 };
 
 std::ostream& operator<<(std::ostream& out, const Fraction& value);
