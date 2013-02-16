@@ -29,6 +29,7 @@ private:
 };
 
 Fraction operator+(const Fraction& left, const Fraction& right);
+Fraction operator-(const Fraction& left, const Fraction& right);
 
 std::ostream& operator<<(std::ostream& out, const Fraction& value);
 #endif 

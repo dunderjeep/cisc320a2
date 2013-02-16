@@ -53,8 +53,12 @@ ostream& operator<<(ostream& out, const Fraction& value) {
 Fraction operator+(const Fraction& left, const Fraction& right) {
 	int n = left.numerator() * right.denominator() + left.denominator() * right.numerator();	
 	int d = left.denominator() * right.denominator();
-	cout << "denom:" << d;
-	cout << "num: " << n;	
+	return Fraction(n,d);
+}
+
+Fraction operator-(const Fraction& left, const Fraction& right) {
+	int n = left.numerator() * right.denominator() - left.denominator() * right.numerator();	
+	int d = left.denominator() * right.denominator();
 	return Fraction(n,d);
 }
 

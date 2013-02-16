@@ -32,6 +32,8 @@ int main(int argc, char * argv[]) {
 	Fraction test7(1, 6);
 	Fraction test8 = test6 + test7;
 	cout << "Should be \"31/24\": " << test8 << endl;
+	Fraction test9 = test6 - test7;
+	cout << "Should be \"23/24\": " << test9 << endl;
 	
 	return 0;
 }
