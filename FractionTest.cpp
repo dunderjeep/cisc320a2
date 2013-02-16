@@ -69,6 +69,9 @@ int main(int argc, char * argv[]) {
 		cout << "Inequality test passed." << endl;
 	if (test6 > test7 && test6 >= test7)
 		cout << "Greater than test passed." << endl;
+	if (test7 < test6 && test7 <= test6)
+		cout << "Less than test passed." << endl;
+	
 
 
 
