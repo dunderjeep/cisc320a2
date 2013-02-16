@@ -102,6 +102,18 @@ bool operator<(const int left, const Fraction& right) {
 	return left * right.denominator() < right.numerator(); 
 }
 
+bool operator<=(const int left, const Fraction& right) {
+	return left * right.denominator() <= right.numerator() ;
+}
+
+bool operator>(const int left, const Fraction& right) {
+	return left * right.denominator() > right.numerator(); 
+}
+
+bool operator>=(const int left, const Fraction& right) {
+	return left * right.denominator() >= right.numerator(); 
+}
+
 Fraction operator+(const Fraction& left, const Fraction& right) {
 	int n = left.numerator() * right.denominator() + left.denominator() * right.numerator();	
 	int d = left.denominator() * right.denominator();

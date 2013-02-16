@@ -46,6 +46,9 @@ friend Fraction operator*(const Fraction& left, const Fraction& right);
 friend Fraction operator/(const Fraction& left, const Fraction& right);
 friend Fraction operator-(const Fraction& frac);
 friend bool operator<(const int left, const Fraction& right);
+friend bool operator<=(const int left, const Fraction& right);
+friend bool operator>(const int left, const Fraction& right);
+friend bool operator>=(const int left, const Fraction& right);
 
 friend std::ostream& operator<<(std::ostream& out, const Fraction& value);
 };
