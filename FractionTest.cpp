@@ -34,6 +34,10 @@ int main(int argc, char * argv[]) {
 	cout << "Should be \"31/24\": " << test8 << endl;
 	Fraction test9 = test6 - test7;
 	cout << "Should be \"23/24\": " << test9 << endl;
+	Fraction test10 = test6 - 1;
+	cout << "Should be \"1/8\": " << test10 << endl;
+	Fraction test11 = 2 - test7;
+	cout << "Should be \"11/6\": " << test11 << endl;
 	
 	return 0;
 }
