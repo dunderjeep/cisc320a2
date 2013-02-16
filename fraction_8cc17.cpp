@@ -34,7 +34,6 @@ void Fraction::normalize() {
 
 int Fraction::gcd(int a, int b) {
 	if (b == 0) return a;
-//	else if (a < b) return gcd(b, a); 	
 	else return gcd(b, mod(a,b));
 }
 
@@ -49,6 +48,14 @@ int Fraction::mod(int a, int b) {
 
 ostream& operator<<(ostream& out, const Fraction& value) {
 	out << value.numerator() << "/" << value.denominator();
+}
+
+Fraction operator+(const Fraction& left, const Fraction& right) {
+	int n = left.numerator() * right.denominator() + left.denominator() * right.numerator();	
+	int d = left.denominator() * right.denominator();
+	cout << "denom:" << d;
+	cout << "num: " << n;	
+	return Fraction(n,d);
 }
 
 

@@ -27,6 +27,11 @@ int main(int argc, char * argv[]) {
 	// Test accessors
 	cout << "Numerator should be -7: " << test4.numerator() << endl;
 	cout << "Denominator should be 2: " << test4.denominator() << endl;
+
+	Fraction test6(9, 8);
+	Fraction test7(1, 6);
+	Fraction test8 = test6 + test7;
+	cout << "Should be \"31/24\": " << test8 << endl;
 	
 	return 0;
 }
