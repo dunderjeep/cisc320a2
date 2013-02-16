@@ -17,6 +17,7 @@ private:
 	int denom;
 	int gcd(int, int);
 	void normalize();
+	int mod(int, int);
 };
 
 std::ostream& operator<<(std::ostream& out, const Fraction& value);
