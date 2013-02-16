@@ -65,6 +65,8 @@ int main(int argc, char * argv[]) {
 	Fraction test17(9, 8);
 	if (test6 == test17)
 		cout << "Equality test passed." << endl;
+	if (test6 != test7)
+		cout << "Inequality test passed." << endl;
 
 
 

@@ -26,6 +26,7 @@ public:
 	Fraction operator++(int); // Post-increment
 
 	bool operator==(const Fraction& other) const;
+	bool operator!=(const Fraction& other) const;
 private:
 	int num;
 	int denom;
