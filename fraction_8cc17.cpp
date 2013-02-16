@@ -74,5 +74,9 @@ Fraction operator/(const Fraction& left, const Fraction& right) {
 	return Fraction(n,d);
 }
 
+Fraction operator-(const Fraction& frac) {
+	return Fraction(-frac.numerator(), frac.denominator());
+}
+
 
 

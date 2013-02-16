@@ -42,6 +42,9 @@ int main(int argc, char * argv[]) {
 	cout << "Should be \"3/16\": " << test12 << endl;
 	Fraction test13 = test6 / test7;
 	cout << "Should be \"27/4\": " << test13 << endl;
+
+	// Test unary negation
+	cout << "Should be \"-1/6\": " << -test7 << endl;
 	
 	return 0;
 }
