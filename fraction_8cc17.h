@@ -31,6 +31,8 @@ public:
 	bool operator>=(const Fraction& other) const;
 	bool operator<(const Fraction& other) const;
 	bool operator<=(const Fraction& other) const;
+	bool operator>(const int other) const;
+	bool operator>=(const int other) const;
 private:
 	int num;
 	int denom;
