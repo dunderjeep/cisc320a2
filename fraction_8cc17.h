@@ -5,6 +5,14 @@
 #include <iostream>
 #include <string>
 
+class FractionException {
+public:
+	FractionException(const string&);
+	string what() const;
+private:
+	string message;
+};
+
 class Fraction {
 public:
 	Fraction();

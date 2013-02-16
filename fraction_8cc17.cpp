@@ -5,6 +5,9 @@ using namespace std;
 
 #include "fraction_8cc17.h"
 
+FractionException::FractionException(const string& m) : message(m) { }
+string FractionException::what() const { return message; }
+
 Fraction::Fraction() : num(0), denom(1) { }
 Fraction::Fraction(int n) : num(n), denom(1) { }
 Fraction::Fraction(int n, int d) : num(n), denom(d) {
@@ -17,7 +20,6 @@ int Fraction::denominator() const { return denom; }
 void Fraction::normalize() {
 	int divisor;
 	divisor = gcd(num, denom);
-	cout << "divisor: " << divisor << endl;
 	if (divisor > 1) {
 		num /= divisor;
 		denom /= divisor;	
