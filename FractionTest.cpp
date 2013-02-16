@@ -38,6 +38,10 @@ int main(int argc, char * argv[]) {
 	cout << "Should be \"1/8\": " << test10 << endl;
 	Fraction test11 = 2 - test7;
 	cout << "Should be \"11/6\": " << test11 << endl;
+	Fraction test12 = test6 * test7;
+	cout << "Should be \"3/16\": " << test12 << endl;
+	Fraction test13 = test6 / test7;
+	cout << "Should be \"27/4\": " << test13 << endl;
 	
 	return 0;
 }

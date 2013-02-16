@@ -62,5 +62,17 @@ Fraction operator-(const Fraction& left, const Fraction& right) {
 	return Fraction(n,d);
 }
 
+Fraction operator*(const Fraction& left, const Fraction& right) {
+	int n = left.numerator() * right.numerator();	
+	int d = left.denominator() * right.denominator();
+	return Fraction(n,d);
+}
+
+Fraction operator/(const Fraction& left, const Fraction& right) {
+	int n = left.numerator() * right.denominator();	
+	int d = left.denominator() * right.numerator();
+	return Fraction(n,d);
+}
+
 
 
