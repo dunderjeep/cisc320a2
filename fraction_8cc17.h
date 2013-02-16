@@ -23,7 +23,9 @@ public:
 	
 	Fraction& operator+=(const Fraction& right);	
 	Fraction& operator++(); // Pre-increment
-	Fraction operator++(int);
+	Fraction operator++(int); // Post-increment
+
+	bool operator==(const Fraction& other) const;
 private:
 	int num;
 	int denom;
@@ -36,6 +38,7 @@ friend Fraction operator-(const Fraction& left, const Fraction& right);
 friend Fraction operator*(const Fraction& left, const Fraction& right);
 friend Fraction operator/(const Fraction& left, const Fraction& right);
 friend Fraction operator-(const Fraction& frac);
+
 friend std::ostream& operator<<(std::ostream& out, const Fraction& value);
 };
 

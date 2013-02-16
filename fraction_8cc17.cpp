@@ -66,6 +66,10 @@ Fraction Fraction::operator++(int unused) {
 	return clone;
 }
 
+bool Fraction::operator==(const Fraction& other) const {
+	return num == other.numerator() && denom == other.denominator();
+}
+
 Fraction operator+(const Fraction& left, const Fraction& right) {
 	int n = left.numerator() * right.denominator() + left.denominator() * right.numerator();	
 	int d = left.denominator() * right.denominator();

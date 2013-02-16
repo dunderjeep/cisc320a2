@@ -60,6 +60,14 @@ int main(int argc, char * argv[]) {
 	test16 += test3;
 	cout << "Should be \"73/24\": " << test16 << endl;
 
+	// Test comparisons
+	cout << "\nShould see six comparison test results:" << endl;
+	Fraction test17(9, 8);
+	if (test6 == test17)
+		cout << "Equality test passed." << endl;
+
+
+
 	
 	return 0;
 }
