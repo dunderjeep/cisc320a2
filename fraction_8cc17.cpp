@@ -46,8 +46,17 @@ int Fraction::mod(int a, int b) {
 	return ret;
 }
 
-ostream& operator<<(ostream& out, const Fraction& value) {
-	out << value.numerator() << "/" << value.denominator();
+//Pre-increment
+Fraction& Fraction::operator++() {
+	num += denom;
+	return *this;
+}
+
+//Post-increment
+Fraction Fraction::operator++(int unused) {
+	Fraction clone(num, denom);
+	num += denom;
+	return clone;
 }
 
 Fraction operator+(const Fraction& left, const Fraction& right) {
@@ -76,6 +85,10 @@ Fraction operator/(const Fraction& left, const Fraction& right) {
 
 Fraction operator-(const Fraction& frac) {
 	return Fraction(-frac.numerator(), frac.denominator());
+}
+
+ostream& operator<<(ostream& out, const Fraction& value) {
+	out << value.numerator() << "/" << value.denominator();
 }
 
 

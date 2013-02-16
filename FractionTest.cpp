@@ -47,5 +47,14 @@ int main(int argc, char * argv[]) {
 	cout << "Should be \"-1/6\": " << -test7 << endl;
 
 	
+	// Test pre and post-increment operators
+	Fraction test14 = 2 + test3++;
+	cout << "Should be \"8/3\": " << test14 << endl;
+	cout << "Should be \"5/3\": " << test3 << endl;	
+	Fraction test15 = 2 + ++test3;
+	cout << "Should be \"14/3\": " << test15 << endl;
+	cout << "Should be \"8/3\": " << test3 << endl;
+
+	
 	return 0;
 }
