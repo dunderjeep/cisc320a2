@@ -45,6 +45,7 @@ int main(int argc, char * argv[]) {
 
 	// Test unary negation
 	cout << "Should be \"-1/6\": " << -test7 << endl;
+
 	
 	return 0;
 }

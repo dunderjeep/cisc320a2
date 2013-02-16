@@ -19,21 +19,22 @@ public:
 	Fraction(int);
 	Fraction(int, int);
 	int numerator() const;
-	int denominator() const;		
+	int denominator() const;
+	
 private:
 	int num;
 	int denom;
 	int gcd(int, int);
 	void normalize();
 	int mod(int, int);
+
+friend Fraction operator+(const Fraction& left, const Fraction& right);
+friend Fraction operator-(const Fraction& left, const Fraction& right);
+friend Fraction operator*(const Fraction& left, const Fraction& right);
+friend Fraction operator/(const Fraction& left, const Fraction& right);
+friend Fraction operator-(const Fraction& frac);
+friend std::ostream& operator<<(std::ostream& out, const Fraction& value);
 };
 
-Fraction operator+(const Fraction& left, const Fraction& right);
-Fraction operator-(const Fraction& left, const Fraction& right);
-Fraction operator*(const Fraction& left, const Fraction& right);
-Fraction operator/(const Fraction& left, const Fraction& right);
-Fraction operator-(const Fraction& frac);
-
-std::ostream& operator<<(std::ostream& out, const Fraction& value);
 #endif 
 
