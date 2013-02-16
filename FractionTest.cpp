@@ -15,6 +15,14 @@ int main(int argc, char * argv[]) {
 	cout << "Should be \"2/3\": " << test3 << endl;
 	Fraction test4(210, -60);
 	cout << "Should be \"-7/2\": " << test4 << endl;
+
+		// Test exception for when denominator is zero
+	try {
+		Fraction test5(4, 0);
+		cout << "Should not get here: " << test5 << endl;
+	} catch (FractionException &e) {
+		cout << "Exception message should indicate illegal denominator: " << e.what() << endl;
+	}
 	
 	return 0;
 }

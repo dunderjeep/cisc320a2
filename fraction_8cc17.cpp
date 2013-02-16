@@ -11,7 +11,9 @@ string FractionException::what() const { return message; }
 Fraction::Fraction() : num(0), denom(1) { }
 Fraction::Fraction(int n) : num(n), denom(1) { }
 Fraction::Fraction(int n, int d) : num(n), denom(d) {
-		normalize();
+	if (denom == 0)
+		throw FractionException("Illegal denominator: 0");	
+	normalize();
 }
 
 int Fraction::numerator() const { return num; }
