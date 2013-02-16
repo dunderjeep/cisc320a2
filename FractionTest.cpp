@@ -73,6 +73,8 @@ int main(int argc, char * argv[]) {
 		cout << "Less than test passed." << endl;
 	if (test6 > 1)
 		cout << "Mixed type comparison passed." << endl;
+	if (1 < test6)
+		cout << "Second mixed type comparison passed." << endl;
 	
 
 

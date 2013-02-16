@@ -87,7 +87,7 @@ bool Fraction::operator<(const Fraction& other) const {
 }
 
 bool Fraction::operator<=(const Fraction& other) const {
-	return (*this ==  other || *this < other);
+	return *this ==  other || *this < other;
 }
 
 bool Fraction::operator>(const int other) const {
@@ -96,6 +96,10 @@ bool Fraction::operator>(const int other) const {
 
 bool Fraction::operator>=(const int other) const {
 	return num > other * denom || *this == other;
+}
+
+bool operator<(const int left, const Fraction& right) {
+	return left * right.denominator() < right.numerator(); 
 }
 
 Fraction operator+(const Fraction& left, const Fraction& right) {
@@ -129,6 +133,3 @@ Fraction operator-(const Fraction& frac) {
 ostream& operator<<(ostream& out, const Fraction& value) {
 	out << value.numerator() << "/" << value.denominator();
 }
-
-
-
