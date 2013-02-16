@@ -46,6 +46,13 @@ int Fraction::mod(int a, int b) {
 	return ret;
 }
 
+Fraction& Fraction::operator+=(const Fraction& right) {
+	num = num*right.denom + right.num*denom;
+	denom = denom * right.denom;
+	normalize();
+	return *this;
+}
+
 //Pre-increment
 Fraction& Fraction::operator++() {
 	num += denom;

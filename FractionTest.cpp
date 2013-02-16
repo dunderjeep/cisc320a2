@@ -55,6 +55,11 @@ int main(int argc, char * argv[]) {
 	cout << "Should be \"14/3\": " << test15 << endl;
 	cout << "Should be \"8/3\": " << test3 << endl;
 
+	// Test += operator
+	Fraction test16(3, 8);
+	test16 += test3;
+	cout << "Should be \"73/24\": " << test16 << endl;
+
 	
 	return 0;
 }

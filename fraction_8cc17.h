@@ -21,6 +21,7 @@ public:
 	int numerator() const;
 	int denominator() const;
 	
+	Fraction& operator+=(const Fraction& right);	
 	Fraction& operator++(); // Pre-increment
 	Fraction operator++(int);
 private:
