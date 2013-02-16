@@ -12,7 +12,11 @@ Fraction::Fraction() : num(0), denom(1) { }
 Fraction::Fraction(int n) : num(n), denom(1) { }
 Fraction::Fraction(int n, int d) : num(n), denom(d) {
 	if (denom == 0)
-		throw FractionException("Illegal denominator: 0");	
+		throw FractionException("Illegal denominator: 0");
+	if (denom < 0) {
+		num *= -1;
+		denom *= -1;	
+	}	
 	normalize();
 }
 
@@ -25,10 +29,6 @@ void Fraction::normalize() {
 	if (divisor > 1) {
 		num /= divisor;
 		denom /= divisor;	
-	}
-	if (divisor < 0) {
-		num = -num;
-		denom = -denom;	
 	}
 }
 
