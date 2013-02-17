@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 class FractionException {
 public:
@@ -25,33 +26,42 @@ public:
 	Fraction& operator++(); // Pre-increment
 	Fraction operator++(int); // Post-increment
 
-	bool operator==(const Fraction& other) const;
-	bool operator!=(const Fraction& other) const;
-	bool operator>(const Fraction& other) const;
-	bool operator>=(const Fraction& other) const;
-	bool operator<(const Fraction& other) const;
-	bool operator<=(const Fraction& other) const;
-	bool operator>(const int other) const;
-	bool operator>=(const int other) const;
+	int compare(const Fraction& other) const;
+
+//	bool operator==(const Fraction& other) const;
+//	bool operator!=(const Fraction& other) const;
+//	bool operator>(const Fraction& other) const;
+//	bool operator>=(const Fraction& other) const;
+//	bool operator<(const Fraction& other) const;
+//	bool operator<=(const Fraction& other) const;
+//	bool operator>(const int other) const;
+//	bool operator>=(const int other) const;
 private:
 	int num;
 	int denom;
 	int gcd(int, int);
 	void normalize();
 	int mod(int, int);
+//	string numberToString(T);
+//	T stringToNumber(const string&);
 
 friend Fraction operator+(const Fraction& left, const Fraction& right);
 friend Fraction operator-(const Fraction& left, const Fraction& right);
 friend Fraction operator*(const Fraction& left, const Fraction& right);
 friend Fraction operator/(const Fraction& left, const Fraction& right);
 friend Fraction operator-(const Fraction& frac);
-friend bool operator<(const int left, const Fraction& right);
-friend bool operator<=(const int left, const Fraction& right);
-friend bool operator>(const int left, const Fraction& right);
-friend bool operator>=(const int left, const Fraction& right);
+
+friend bool operator==(const Fraction& left, const Fraction& right);
+friend bool operator!=(const Fraction& left, const Fraction& right);
+friend bool operator<(const Fraction& left, const Fraction& right);
+friend bool operator<=(const Fraction& left, const Fraction& right);
+friend bool operator>(const Fraction& left, const Fraction& right);
+friend bool operator>=(const Fraction& left, const Fraction& right);
 
 friend std::ostream& operator<<(std::ostream& out, const Fraction& value);
+friend std::istream& operator>>(std::istream&, Fraction& value);
 };
+
 
 #endif 
 

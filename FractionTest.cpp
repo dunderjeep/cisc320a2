@@ -75,10 +75,23 @@ int main(int argc, char * argv[]) {
 		cout << "Mixed type comparison passed." << endl;
 	if (1 < test6)
 		cout << "Second mixed type comparison passed." << endl;
-	
-
-
-
+	Fraction testx(0,1);
+	if (test10 == 0) 
+		cout << "test10 == 0 passed" << endl;
+	Fraction sum(0);
+	Fraction fin;
+	cout << "\nSumming fractions. Enter fractions as \"1/2\" or just enter a single integer." << endl;
+	cout << "Enter zero to end the summation:" << endl;
+	do {
+		cout << "Enter a fraction to add to sum: ";
+		try {
+			cin >> fin;
+			sum += fin;
+		} catch (FractionException &e) {
+			cout << e.what() << endl;
+		}
+	} while (fin != 0);
+	cout << "Sum is: " << sum << endl;
 	
 	return 0;
 }

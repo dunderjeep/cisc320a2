@@ -66,52 +66,32 @@ Fraction Fraction::operator++(int unused) {
 	return clone;
 }
 
-bool Fraction::operator==(const Fraction& other) const {
-	return num == other.numerator() && denom == other.denominator();
+int Fraction::compare(const Fraction& other) const {
+	return numerator() * other.denominator() - denominator() * other.numerator();
 }
 
-bool Fraction::operator!=(const Fraction& other) const {
-	return !(*this == other);
+bool operator==(const Fraction& left, const Fraction& right) {
+	return left.compare(right) == 0;
 }
 
-bool Fraction::operator>(const Fraction& other) const {
-	return num * other.denominator() > other.numerator() * denom;
+bool operator!=(const Fraction& left, const Fraction& right) {
+	return left.compare(right) != 0;
 }
 
-bool Fraction::operator>=(const Fraction& other) const {
-	return (*this ==  other || *this > other);
+bool operator>(const Fraction& left, const Fraction& right) {
+	return left.compare(right) > 0;
 }
 
-bool Fraction::operator<(const Fraction& other) const {
-	return num * other.denominator() < other.numerator() * denom;
+bool operator>=(const Fraction& left, const Fraction& right) {
+	return left.compare(right) >= 0;
 }
 
-bool Fraction::operator<=(const Fraction& other) const {
-	return *this ==  other || *this < other;
+bool operator<(const Fraction& left, const Fraction& right) {
+	return left.compare(right) < 0;
 }
 
-bool Fraction::operator>(const int other) const {
-	return num > other * denom;
-}
-
-bool Fraction::operator>=(const int other) const {
-	return num > other * denom || *this == other;
-}
-
-bool operator<(const int left, const Fraction& right) {
-	return left * right.denominator() < right.numerator(); 
-}
-
-bool operator<=(const int left, const Fraction& right) {
-	return left * right.denominator() <= right.numerator() ;
-}
-
-bool operator>(const int left, const Fraction& right) {
-	return left * right.denominator() > right.numerator(); 
-}
-
-bool operator>=(const int left, const Fraction& right) {
-	return left * right.denominator() >= right.numerator(); 
+bool operator<=(const Fraction& left, const Fraction& right) {
+	return left.compare(right) <= 0;
 }
 
 Fraction operator+(const Fraction& left, const Fraction& right) {
@@ -144,4 +124,19 @@ Fraction operator-(const Fraction& frac) {
 
 ostream& operator<<(ostream& out, const Fraction& value) {
 	out << value.numerator() << "/" << value.denominator();
+}
+
+istream& operator>>(istream& in, Fraction& value) {
+	int n, d;
+	in >> n;
+	char c;
+	in >> c;
+	if (c == '/') 
+		in >> d;
+	else {
+		in.putback(c);
+		d = 1;
+	}
+	value = Fraction(n, d);
+	return in;
 }
