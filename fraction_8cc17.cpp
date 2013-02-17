@@ -1,9 +1,12 @@
 #include <iostream>
+#include <sstream>
 #include <cmath>
 #include <stdio.h>
 using namespace std;
 
 #include "fraction_8cc17.h"
+
+//template <class T>;
 
 FractionException::FractionException(const string& m) : message(m) { }
 string FractionException::what() const { return message; }
@@ -127,16 +130,23 @@ ostream& operator<<(ostream& out, const Fraction& value) {
 }
 
 istream& operator>>(istream& in, Fraction& value) {
-	int n, d;
+	int n;
+	int d;
 	in >> n;
+	if (n == 0) {
+		value = Fraction(n,1);
+		return in;
+	}
 	char c;
 	in >> c;
-	if (c == '/') 
+	if (c == '/') {
 		in >> d;
-	else {
+		value = Fraction(n, d);
+		return in;
+	} else {
 		in.putback(c);
-		d = 1;
-	}
-	value = Fraction(n, d);
-	return in;
+		value = Fraction(n,1);
+		return in;		
+	}	
+
 }

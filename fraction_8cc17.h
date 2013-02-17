@@ -27,23 +27,12 @@ public:
 	Fraction operator++(int); // Post-increment
 
 	int compare(const Fraction& other) const;
-
-//	bool operator==(const Fraction& other) const;
-//	bool operator!=(const Fraction& other) const;
-//	bool operator>(const Fraction& other) const;
-//	bool operator>=(const Fraction& other) const;
-//	bool operator<(const Fraction& other) const;
-//	bool operator<=(const Fraction& other) const;
-//	bool operator>(const int other) const;
-//	bool operator>=(const int other) const;
 private:
 	int num;
 	int denom;
 	int gcd(int, int);
 	void normalize();
 	int mod(int, int);
-//	string numberToString(T);
-//	T stringToNumber(const string&);
 
 friend Fraction operator+(const Fraction& left, const Fraction& right);
 friend Fraction operator-(const Fraction& left, const Fraction& right);
