@@ -1,3 +1,7 @@
+// CISC 320 Assignment 2 
+// Cliff Coulter 04192150
+// Feb 18 2013
+// A Class for creating Fractions with overloaded operations
 
 #ifndef FRACTION_8CC17_H
 #define FRACTION_8CC17_H
@@ -50,7 +54,6 @@ friend bool operator>=(const Fraction& left, const Fraction& right);
 friend std::ostream& operator<<(std::ostream& out, const Fraction& value);
 friend std::istream& operator>>(std::istream&, Fraction& value);
 };
-
 
 #endif 
 

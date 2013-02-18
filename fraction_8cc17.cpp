@@ -1,3 +1,8 @@
+// CISC 320 Assignment 2 
+// Cliff Coulter 04192150
+// Feb 18 2013
+// A Class for creating Fractions with overloaded operations
+
 #include <iostream>
 #include <sstream>
 #include <cmath>
